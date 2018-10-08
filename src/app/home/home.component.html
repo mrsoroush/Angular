@@ -2,3 +2,25 @@
   home works!
 </p>
 <test-comp></test-comp>
+<br>
+{{age}}
+<br>
+{{name}}
+<br>
+{{ getName() }}
+<br>
+<button class="btn btn-primary" [disabled]="!allowClick" (click)="onButtonClicked()">Click me</button>
+<br>
+{{ allowClick }}
+<br>
+<h1 [innerText]="allowClick"></h1>
+<br>
+<p>{{ btnClick }}</p>
+<br>
+<input type="text" (input)="onInputChange($event)">
+<br>
+{{ lastName }}
+<br>
+<input type="text" [(ngModel)]="lastName">
+{{ lastName }}
+<br>
