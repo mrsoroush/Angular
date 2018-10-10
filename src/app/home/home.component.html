@@ -15,7 +15,10 @@
 <br>
 <h1 [innerText]="allowClick"></h1>
 <br>
-<p>{{ btnClick }}</p>
+<h3 *ngIf="buttonClicked; else secondP">{{ btnClick }}</h3>
+<ng-template #secondP>
+  <p>Button is not clicked</p>
+</ng-template>
 <br>
 <input type="text" (input)="onInputChange($event)">
 <br>
@@ -24,3 +27,8 @@
 <input type="text" [(ngModel)]="lastName">
 {{ lastName }}
 <br>
+<app-test1></app-test1>
+<app-test1></app-test1>
+<app-test1></app-test1>
+<app-test1></app-test1>
+<app-test1></app-test1>

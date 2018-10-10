@@ -22,12 +22,14 @@ export class HomeComponent implements OnInit{
   allowClick = false;
   btnClick = 'Button is not clicked.';
   lastName = "";
+  buttonClicked = false;
 
   getName(){
     return this.name;
   }
 
   onButtonClicked(){
+    this.buttonClicked = true;
     this.btnClick = 'Buttun is clicked now!';
   }
 
