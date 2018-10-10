@@ -1,1 +1,3 @@
-<p [ngStyle]="{color: getColor()}">From Test Component</p>
+<p [ngStyle]="{backgroundColor: getColor()}"
+   [ngClass]="{greater: getColor() === 'red', bigFont: colorCode <= 0.5}">
+From Test Component</p>

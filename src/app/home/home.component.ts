@@ -24,6 +24,8 @@ export class HomeComponent implements OnInit{
   lastName = "";
   buttonClicked = false;
 
+  tests = ['test1', 'test2'];
+
   getName(){
     return this.name;
   }
@@ -31,6 +33,7 @@ export class HomeComponent implements OnInit{
   onButtonClicked(){
     this.buttonClicked = true;
     this.btnClick = 'Buttun is clicked now!';
+    this.tests.push('test');
   }
 
   onInputChange(event : Event){

@@ -27,8 +27,6 @@
 <input type="text" [(ngModel)]="lastName">
 {{ lastName }}
 <br>
-<app-test1></app-test1>
-<app-test1></app-test1>
-<app-test1></app-test1>
-<app-test1></app-test1>
-<app-test1></app-test1>
+<app-test1 *ngFor="let t of tests"></app-test1>
+<p *ngFor="let t of tests; let i = index">{{'test' + (i+1)}}</p>
+
