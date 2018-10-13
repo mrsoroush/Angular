@@ -1,0 +1,3 @@
+<app-about [title]="message"></app-about>
+<app-star *ngFor="let r of ratings" [starRating]="r" (starClicked)="onClick($event)"></app-star>
+<p>{{ eventOutput }}</p>
