@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { IPerson } from '../person';
 
 @Component({
   selector: 'app-home2',
@@ -9,14 +10,14 @@ export class Home2Component implements OnInit {
 
   message ="Hello from Home2";
   ratings: number[] = [2, 5, 3.5, 4, 1, 4.5];
-  eventOutput: string;
+  eventOutput: IPerson;
 
   constructor() { }
 
   ngOnInit() {
   }
 
-  onClick(event){
+  onClick(event: IPerson){
     console.log(event);
     this.eventOutput = event;
   }
