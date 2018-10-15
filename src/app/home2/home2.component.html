@@ -1,6 +1,12 @@
 <app-about [title]="message"></app-about>
-<app-star *ngFor="let r of ratings" [starRating]="r" (starClicked)="onClick($event)"></app-star>
+<app-star *ngFor="let r of ratings" [starRating]="r" (starClicked)="onClick($event)">
+    <p>Extra Contents</p>
+</app-star>
+<input type="text" #nameInputField>
 <p>This paragraph is from home2</p>
+<h1>{{ name }}</h1>
+<!-- <button class="btn btn-primary" (click)="bottunClick(nameInputField)">Applay Name</button> -->
+<button class="btn btn-primary" (click)="bottunClick()">Applay Name</button>
 <h3 *ngIf="eventOutput != null">
     {{ eventOutput.name + " " + eventOutput.age + " " + eventOutput.school}}
 </h3>
