@@ -1,10 +1,11 @@
-import { Component, OnInit, OnChanges, Input, EventEmitter, Output } from '@angular/core';
+import { Component, OnInit, OnChanges, Input, EventEmitter, Output, ViewEncapsulation } from '@angular/core';
 import { IPerson } from '../person';
 
 @Component({
   selector: 'app-star',
   templateUrl: './star.component.html',
-  styleUrls: ['./star.component.css']
+  styleUrls: ['./star.component.css'],
+  //encapsulation: ViewEncapsulation.None /* we usually don't use from this
 })
 export class StarComponent implements OnInit, OnChanges {
 

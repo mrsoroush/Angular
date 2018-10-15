@@ -1,1 +1,7 @@
-.crop{overflow:hidden;}
+.crop {
+    overflow:hidden;
+}
+
+p {
+    color: red;
+}

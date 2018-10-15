@@ -1,5 +1,6 @@
 <app-about [title]="message"></app-about>
 <app-star *ngFor="let r of ratings" [starRating]="r" (starClicked)="onClick($event)"></app-star>
+<p>This paragraph is from home2</p>
 <h3 *ngIf="eventOutput != null">
     {{ eventOutput.name + " " + eventOutput.age + " " + eventOutput.school}}
 </h3>
