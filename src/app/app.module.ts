@@ -10,6 +10,9 @@ import { Test1Component } from './test1/test1.component';
 import { Home2Component } from './home2/home2.component';
 import { AboutComponent } from './about/about.component';
 import { StarComponent } from './star/star.component';
+import { HeaderComponent } from './header/header.component';
+import { HomeStarComponent } from './home-star/home-star.component';
+import { StarCommentComponent } from './star-comment/star-comment.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +22,10 @@ import { StarComponent } from './star/star.component';
     Test1Component,
     Home2Component,
     AboutComponent,
-    StarComponent
+    StarComponent,
+    HeaderComponent,
+    HomeStarComponent,
+    StarCommentComponent
   ],
   imports: [
     BrowserModule,
