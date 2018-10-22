@@ -1,11 +1,5 @@
-<label>Enter Your Comment:</label><br>
-<textarea cols="40" #myTextarea></textarea><br>
-<button class="btn btn-primary" (click)="buttonClicked($event)">Add Comment</button>
-<hr>
-
-  <p>{{ text }}</p>
-  <div>
-    <fa name="heart"></fa>
-    <fa name="fire"></fa>
-  </div>
-
+<app-comments (buttonClicked)="onClick($event)"></app-comments>
+<h3>{{ text }}</h3>
+<app-likes></app-likes>
+<h3>Likes: {{ numberOfLikes }}, Dislikes: {{ numberOfDislikes }}</h3>
+<h3>{{ textOfComment }}</h3>
