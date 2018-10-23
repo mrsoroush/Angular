@@ -14,7 +14,6 @@ import { HeaderComponent } from './header/header.component';
 import { HomeStarComponent } from './home-star/home-star.component';
 import { StarCommentComponent } from './star-comment/star-comment.component';
 import { CommentsComponent } from './comments/comments.component';
-import { LikesComponent } from './likes/likes.component';
 
 @NgModule({
   declarations: [
@@ -28,8 +27,7 @@ import { LikesComponent } from './likes/likes.component';
     HeaderComponent,
     HomeStarComponent,
     StarCommentComponent,
-    CommentsComponent,
-    LikesComponent
+    CommentsComponent
   ],
   imports: [
     BrowserModule,

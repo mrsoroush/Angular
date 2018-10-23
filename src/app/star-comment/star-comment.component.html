@@ -1,3 +1,4 @@
-<p>
-  star-comment works!
-</p>
+<label>Rating:</label>
+<input type="number" min="0" max="5" #rating><br>
+{{ count }}
+<button class="btn btn-primary" (click)="onRate()">Rate this</button>

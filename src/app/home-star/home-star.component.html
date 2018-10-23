@@ -1,5 +1,8 @@
 <app-comments (buttonClicked)="onClick($event)"></app-comments>
-<h3>{{ text }}</h3>
-<app-likes></app-likes>
-<h3>Likes: {{ numberOfLikes }}, Dislikes: {{ numberOfDislikes }}</h3>
+<div *ngIf="showDiv">
+    {{ numberOfLikes }}<fa name="heart" (click)="onLikeClicked()"></fa>
+    {{ numberOfDislikes }}<fa name="fire" (click)="onDislikeClicked()"></fa>
+  </div>
+
 <h3>{{ textOfComment }}</h3>
+<app-star-comment></app-star-comment>
