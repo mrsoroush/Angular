@@ -1,4 +1,9 @@
-<label>Rating:</label>
-<input type="number" min="0" max="5" #rating><br>
-{{ count }}
-<button class="btn btn-primary" (click)="onRate()">Rate this</button>
+<div class="crop" [style.width.px]="starWidth">
+  <div style="width:66px;">
+    <fa name="star"></fa>
+    <fa name="star"></fa>
+    <fa name="star"></fa>
+    <fa name="star"></fa>
+    <fa name="star"></fa>
+  </div>
+</div>

@@ -1,0 +1,30 @@
+.commentDIV {
+    width: 400px;
+    margin: 2em;
+}
+
+.cursor {
+    cursor: pointer;
+}
+
+.bgColor {
+    background-color: #333;
+    color: white;
+    width: 30px;
+}
+
+.margTop {
+    margin-top: 1em;
+}
+
+.noFloat {
+    clear: both;
+}
+
+.starDIV {
+    float: left;
+}
+
+.likesDIV {
+    float: right;
+}

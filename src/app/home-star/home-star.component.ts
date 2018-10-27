@@ -1,4 +1,5 @@
-import { Component, OnInit, ViewChild, AfterViewInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+import { IComment } from '../comment';
 
 @Component({
   selector: 'app-home-star',
@@ -7,31 +8,38 @@ import { Component, OnInit, ViewChild, AfterViewInit } from '@angular/core';
 })
 export class HomeStarComponent implements OnInit {
 
-  //@ViewChild(LikesComponent) child;
-  //prop : [];
-  numberOfLikes: number = 0;
-  numberOfDislikes: number = 0;
-  textOfComment: string;
-  showDiv = false;
-  
+  comments: IComment[] = [];
 
+  @ViewChild('commentText') comm : ElementRef;
+  
   constructor() {
    }
 
   ngOnInit() {
   }
 
-  onClick(event){
-    this.textOfComment = event;
-    this.showDiv = true;
+  addComment(){
+    let c: IComment = {
+      comment: this.comm.nativeElement.value,
+      like: 0,
+      dislike: 0,
+      numberOfReviews: 0,
+      star: 0
+    }
+    this.comments.push(c);
   }
 
-  onLikeClicked(){
-    this.numberOfLikes = this.numberOfLikes + 1;
+  reviewsCount(c: IComment, n: HTMLInputElement){
+    c.numberOfReviews++;
+    c.star += parseInt(n.value);
   }
 
-  onDislikeClicked(){
-    this.numberOfDislikes = this.numberOfDislikes + 1;
+  commentLike(c: IComment){
+    c.like++;
+  }
+
+  commentDislike(c: IComment){
+    c.dislike++;
   }
 
 

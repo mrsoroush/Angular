@@ -13,7 +13,6 @@ import { StarComponent } from './star/star.component';
 import { HeaderComponent } from './header/header.component';
 import { HomeStarComponent } from './home-star/home-star.component';
 import { StarCommentComponent } from './star-comment/star-comment.component';
-import { CommentsComponent } from './comments/comments.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +26,6 @@ import { CommentsComponent } from './comments/comments.component';
     HeaderComponent,
     HomeStarComponent,
     StarCommentComponent,
-    CommentsComponent
   ],
   imports: [
     BrowserModule,

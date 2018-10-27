@@ -1,8 +1,29 @@
-<app-comments (buttonClicked)="onClick($event)"></app-comments>
-<div *ngIf="showDiv">
-    {{ numberOfLikes }}<fa name="heart" (click)="onLikeClicked()"></fa>
-    {{ numberOfDislikes }}<fa name="fire" (click)="onDislikeClicked()"></fa>
-  </div>
-
-<h3>{{ textOfComment }}</h3>
-<app-star-comment></app-star-comment>
+<div class="commentDIV">
+        <label for="comment">Enter Your Comment:</label>
+        <textarea #commentText class="form-control" name="comment"></textarea>
+        <button class="btn btn-primary margTop" (click)="addComment()">Add Comment</button>
+    </div>
+    
+<div class="commentDIV" *ngIf="comments != null">
+    <div *ngFor="let c of comments">
+        <p class="noFloat">{{ c.comment }}</p>
+        <div class="starDIv">
+            <app-star-comment [rating]="c.numberOfReviews != 0 ? c.star / c.numberOfReviews : 0"></app-star-comment>
+        </div>
+        <div class="likesDIV">
+            <span>{{ c.like }}</span>
+            <fa name="heart" (click)="commentLike(c)" class="cursor"></fa>
+            <span>{{ c.dislike }}</span>
+            <fa name="fire" (click)="commentDislike(c)" class="cursor"></fa>
+        </div>
+        <div class="noFloat">
+            <span>Rating:</span>
+            <input #ratingInput type="number" (keyup.enter)="reviewsCount(c, ratingInput)" min="0" max="5" class="bgColor">
+        </div>
+        <hr />
+        <br />
+    </div>
+</div>
+    
+    
+    
