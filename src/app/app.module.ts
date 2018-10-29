@@ -13,6 +13,8 @@ import { StarComponent } from './star/star.component';
 import { HeaderComponent } from './header/header.component';
 import { HomeStarComponent } from './home-star/home-star.component';
 import { StarCommentComponent } from './star-comment/star-comment.component';
+import { BasicHighlightDirective } from './directives/basic-highlight.directive';
+import { AdvancedHighlightDirective } from './directives/advanced-highlight.directive';
 
 @NgModule({
   declarations: [
@@ -26,6 +28,8 @@ import { StarCommentComponent } from './star-comment/star-comment.component';
     HeaderComponent,
     HomeStarComponent,
     StarCommentComponent,
+    BasicHighlightDirective,
+    AdvancedHighlightDirective,
   ],
   imports: [
     BrowserModule,
