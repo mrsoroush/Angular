@@ -1,4 +1,4 @@
-import { Component, OnInit, OnChanges, Input } from '@angular/core';
+import { Component, OnInit, OnChanges, Input, SimpleChanges } from '@angular/core';
 
 @Component({
   selector: 'app-star-comment',
@@ -15,7 +15,8 @@ export class StarCommentComponent implements OnInit, OnChanges {
   ngOnInit() {
   }
 
-  ngOnChanges(): void{
+  ngOnChanges(changes: SimpleChanges): void{
+    console.log(changes);
     this.starWidth = this.rating * 66 / 5;
   }
 

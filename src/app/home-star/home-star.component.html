@@ -8,7 +8,9 @@
     <div *ngFor="let c of comments">
         <p class="noFloat">{{ c.comment }}</p>
         <div class="starDIv">
-            <app-star-comment [rating]="c.numberOfReviews != 0 ? c.star / c.numberOfReviews : 0"></app-star-comment>
+            <app-star-comment [rating]="c.numberOfReviews != 0 ? c.star / c.numberOfReviews : 0">
+                <p>Star Component</p>
+            </app-star-comment>
         </div>
         <div class="likesDIV">
             <span>{{ c.like }}</span>

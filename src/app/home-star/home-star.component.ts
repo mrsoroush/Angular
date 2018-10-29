@@ -1,4 +1,6 @@
-import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef, 
+  DoCheck, AfterContentInit, AfterContentChecked, 
+  AfterViewInit, AfterViewChecked } from '@angular/core';
 import { IComment } from '../comment';
 
 @Component({
@@ -6,16 +8,44 @@ import { IComment } from '../comment';
   templateUrl: './home-star.component.html',
   styleUrls: ['./home-star.component.css']
 })
-export class HomeStarComponent implements OnInit {
+export class HomeStarComponent implements 
+OnInit, 
+DoCheck, 
+AfterContentInit, 
+AfterContentChecked, 
+AfterViewInit, 
+AfterViewChecked {
 
   comments: IComment[] = [];
 
   @ViewChild('commentText') comm : ElementRef;
   
-  constructor() {
-   }
+  constructor() { 
+    console.log("Constructor called");
+  }
 
   ngOnInit() {
+    console.log("ngOnInit called");
+  }
+
+  ngDoCheck(){
+    console.log("ngDoCheck called");
+  }
+  
+  ngAfterContentInit(){
+    console.log("ngAfterContentInit called");
+  }
+
+  ngAfterContentChecked(){
+    console.log("ngAfterContentChecked called");
+  }
+
+  ngAfterViewInit(){
+    console.log("ngAfterViewInit called");
+  }
+
+  ngAfterViewChecked(){
+    console.log("ngAfterViewChecked called");
   }
 
   addComment(){
