@@ -15,6 +15,8 @@ import { HomeStarComponent } from './home-star/home-star.component';
 import { StarCommentComponent } from './star-comment/star-comment.component';
 import { BasicHighlightDirective } from './directives/basic-highlight.directive';
 import { AdvancedHighlightDirective } from './directives/advanced-highlight.directive';
+import { StructuralDirectivesComponent } from './structural-directives/structural-directives.component';
+import { UnlessDirective } from './directives/unless.directive';
 
 @NgModule({
   declarations: [
@@ -30,6 +32,9 @@ import { AdvancedHighlightDirective } from './directives/advanced-highlight.dire
     StarCommentComponent,
     BasicHighlightDirective,
     AdvancedHighlightDirective,
+    StructuralDirectivesComponent,
+    UnlessDirective,
+    ChangeBgDirective,
   ],
   imports: [
     BrowserModule,
