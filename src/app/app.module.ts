@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
+import { Routes, RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import{ TestComponent } from './test.component';
@@ -21,8 +22,14 @@ import { LogServiceComponent } from './log-service/log-service.component';
 import { AddAccountComponent } from './add-account/add-account.component';
 import { AccountsService } from './services/accounts.service';
 import { LoggingService } from './services/logging.service';
+import { NavigationComponent } from './navigation/navigation.component';
 
 
+const routes: Routes = [
+  {path:'', component: HomeComponent},
+  {path:'users', component: Home2Component},
+  {path:'accounts', component: StarComponent}
+];
 
 @NgModule({
   declarations: [
@@ -42,11 +49,13 @@ import { LoggingService } from './services/logging.service';
     UnlessDirective,
     LogServiceComponent,
     AddAccountComponent,
+    NavigationComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    AngularFontAwesomeModule
+    AngularFontAwesomeModule,
+    RouterModule.forRoot(routes)
   ],
   providers: [
     AccountsService,
