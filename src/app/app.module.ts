@@ -17,6 +17,11 @@ import { BasicHighlightDirective } from './directives/basic-highlight.directive'
 import { AdvancedHighlightDirective } from './directives/advanced-highlight.directive';
 import { StructuralDirectivesComponent } from './structural-directives/structural-directives.component';
 import { UnlessDirective } from './directives/unless.directive';
+import { LogServiceComponent } from './log-service/log-service.component';
+import { AddAccountComponent } from './add-account/add-account.component';
+import { AccountsService } from './services/accounts.service';
+
+
 
 @NgModule({
   declarations: [
@@ -34,14 +39,15 @@ import { UnlessDirective } from './directives/unless.directive';
     AdvancedHighlightDirective,
     StructuralDirectivesComponent,
     UnlessDirective,
-    ChangeBgDirective,
+    LogServiceComponent,
+    AddAccountComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
     AngularFontAwesomeModule
   ],
-  providers: [],
+  providers: [AccountsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
