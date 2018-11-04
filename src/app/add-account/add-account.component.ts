@@ -14,7 +14,11 @@ export class AddAccountComponent implements OnInit {
   @ViewChild('username') username: ElementRef;
   @ViewChild('password') password: ElementRef;
 
-  constructor(private accountService: AccountsService) { }
+  constructor(private accountService: AccountsService) { 
+    this.accountService.userAdded.subscribe(
+      (account: IAccount) => alert(account)
+    );
+  }
 
   ngOnInit() {
     this.accounts = this.accountService.accounts;
@@ -23,6 +27,7 @@ export class AddAccountComponent implements OnInit {
   addNewAccount(){
     let a: IAccount = {name: this.username.nativeElement.value, password: this.password.nativeElement.value};
     this.accountService.addAccount(a);
+    this.accountService.userAdded.emit(a);
   }
 
 }

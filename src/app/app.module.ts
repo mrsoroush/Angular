@@ -20,6 +20,7 @@ import { UnlessDirective } from './directives/unless.directive';
 import { LogServiceComponent } from './log-service/log-service.component';
 import { AddAccountComponent } from './add-account/add-account.component';
 import { AccountsService } from './services/accounts.service';
+import { LoggingService } from './services/logging.service';
 
 
 
@@ -47,7 +48,10 @@ import { AccountsService } from './services/accounts.service';
     FormsModule,
     AngularFontAwesomeModule
   ],
-  providers: [AccountsService],
+  providers: [
+    AccountsService,
+    LoggingService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

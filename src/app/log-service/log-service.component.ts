@@ -5,7 +5,7 @@ import { LoggingService } from '../services/logging.service';
   selector: 'app-log-service',
   templateUrl: './log-service.component.html',
   styleUrls: ['./log-service.component.css'],
-  providers: [LoggingService]
+  //providers: [LoggingService]
 })
 export class LogServiceComponent implements OnInit {
 
