@@ -13,7 +13,7 @@ export class NavigationComponent implements OnInit {
   ngOnInit() {
     setTimeout(() => {
       this.routers.navigate(['/users']);
-    }, 5000);
+    }, 5000000000000);
   }
 
 }

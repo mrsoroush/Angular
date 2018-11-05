@@ -6,28 +6,31 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import{ TestComponent } from './test.component';
-import { HomeComponent } from './home/home.component';
-import { Test1Component } from './test1/test1.component';
-import { Home2Component } from './home2/home2.component';
-import { AboutComponent } from './about/about.component';
-import { StarComponent } from './star/star.component';
-import { HeaderComponent } from './header/header.component';
-import { HomeStarComponent } from './home-star/home-star.component';
-import { StarCommentComponent } from './star-comment/star-comment.component';
+import { HomeComponent } from './components/home/home.component';
+import { Test1Component } from './components/test1/test1.component';
+import { Home2Component } from './components/home2/home2.component';
+import { AboutComponent } from './components/about/about.component';
+import { StarComponent } from './components/star/star.component';
+import { HeaderComponent } from './components/header/header.component';
+import { HomeStarComponent } from './components/home-star/home-star.component';
+import { StarCommentComponent } from './components/star-comment/star-comment.component';
 import { BasicHighlightDirective } from './directives/basic-highlight.directive';
 import { AdvancedHighlightDirective } from './directives/advanced-highlight.directive';
-import { StructuralDirectivesComponent } from './structural-directives/structural-directives.component';
+import { StructuralDirectivesComponent } from './components/structural-directives/structural-directives.component';
 import { UnlessDirective } from './directives/unless.directive';
-import { LogServiceComponent } from './log-service/log-service.component';
+import { LogServiceComponent } from './components/log-service/log-service.component';
 import { AddAccountComponent } from './add-account/add-account.component';
 import { AccountsService } from './services/accounts.service';
 import { LoggingService } from './services/logging.service';
-import { NavigationComponent } from './navigation/navigation.component';
+import { NavigationComponent } from './components/navigation/navigation.component';
+import { UsersComponent } from './users/users.component';
+import { UserComponent } from './users/user/user.component';
 
 
 const routes: Routes = [
   {path:'', component: HomeComponent},
-  {path:'users', component: Home2Component},
+  {path:'users', component: UsersComponent},
+  {path:'users/:id/:name', component: UserComponent},
   {path:'accounts', component: StarComponent}
 ];
 
@@ -50,6 +53,8 @@ const routes: Routes = [
     LogServiceComponent,
     AddAccountComponent,
     NavigationComponent,
+    UsersComponent,
+    UserComponent,
   ],
   imports: [
     BrowserModule,

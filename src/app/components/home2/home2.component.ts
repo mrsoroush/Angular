@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
-import { IPerson } from '../interfaces/person';
+import { IPerson } from '../../interfaces/person';
 
 @Component({
   selector: 'app-home2',

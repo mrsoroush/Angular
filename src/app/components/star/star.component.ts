@@ -1,5 +1,5 @@
 import { Component, OnInit, OnChanges, Input, EventEmitter, Output, ViewEncapsulation } from '@angular/core';
-import { IPerson } from '../interfaces/person';
+import { IPerson } from '../../interfaces/person';
 
 @Component({
   selector: 'app-star',

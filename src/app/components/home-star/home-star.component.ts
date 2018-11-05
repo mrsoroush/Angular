@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild, ElementRef, 
   DoCheck, AfterContentInit, AfterContentChecked, 
   AfterViewInit, AfterViewChecked } from '@angular/core';
-import { IComment } from '../interfaces/comment';
+import { IComment } from '../../interfaces/comment';
 
 @Component({
   selector: 'app-home-star',
