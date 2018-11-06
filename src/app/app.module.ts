@@ -19,19 +19,24 @@ import { AdvancedHighlightDirective } from './directives/advanced-highlight.dire
 import { StructuralDirectivesComponent } from './components/structural-directives/structural-directives.component';
 import { UnlessDirective } from './directives/unless.directive';
 import { LogServiceComponent } from './components/log-service/log-service.component';
-import { AddAccountComponent } from './add-account/add-account.component';
+import { AddAccountComponent } from './components/accounts/add-account/add-account.component';
 import { AccountsService } from './services/accounts.service';
 import { LoggingService } from './services/logging.service';
 import { NavigationComponent } from './components/navigation/navigation.component';
 import { UsersComponent } from './users/users.component';
 import { UserComponent } from './users/user/user.component';
+import { AccountsComponent } from './components/accounts/accounts.component';
+import { EditAccountsComponent } from './components/accounts/edit-accounts/edit-accounts.component';
+import { UserService } from './services/user.service';
 
 
 const routes: Routes = [
   {path:'', component: HomeComponent},
   {path:'users', component: UsersComponent},
+  {path:'users/:id', component: UserComponent},
   {path:'users/:id/:name', component: UserComponent},
-  {path:'accounts', component: StarComponent}
+  {path:'accounts', component: AccountsComponent},
+  {path:'accounts/:id/edit', component: EditAccountsComponent},
 ];
 
 @NgModule({
@@ -55,6 +60,8 @@ const routes: Routes = [
     NavigationComponent,
     UsersComponent,
     UserComponent,
+    AccountsComponent,
+    EditAccountsComponent,
   ],
   imports: [
     BrowserModule,
@@ -64,7 +71,8 @@ const routes: Routes = [
   ],
   providers: [
     AccountsService,
-    LoggingService
+    LoggingService,
+    UserService,
   ],
   bootstrap: [AppComponent]
 })

@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
-import { IAccount } from '../interfaces/account';
-import { AccountsService } from '../services/accounts.service';
+import { IAccount } from '../../../interfaces/account';
+import { AccountsService } from '../../../services/accounts.service';
 
 @Component({
   selector: 'app-add-account',
