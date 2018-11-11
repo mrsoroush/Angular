@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
-import { Routes, RouterModule } from '@angular/router';
+import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
 import{ TestComponent } from './test.component';
@@ -29,18 +29,7 @@ import { AccountsComponent } from './components/accounts/accounts.component';
 import { EditAccountsComponent } from './components/accounts/edit-accounts/edit-accounts.component';
 import { UserService } from './services/user.service';
 import { EditUserComponent } from './users/edit-user/edit-user.component';
-
-
-const routes: Routes = [
-  {path:'', component: HomeComponent},
-  {path:'users', component: UsersComponent, children: [
-    {path:':id', component: UserComponent},
-    // {path:':id/:name', component: UserComponent},
-    {path:':id/edit', component: EditUserComponent},
-  ]},
-  {path:'accounts', component: AccountsComponent},
-  {path:'accounts/:id/edit', component: EditAccountsComponent},
-];
+import { Notfound404Component } from './components/notfound404/notfound404.component';
 
 @NgModule({
   declarations: [
@@ -66,12 +55,13 @@ const routes: Routes = [
     AccountsComponent,
     EditAccountsComponent,
     EditUserComponent,
+    Notfound404Component,
   ],
   imports: [
     BrowserModule,
     FormsModule,
     AngularFontAwesomeModule,
-    RouterModule.forRoot(routes)
+    AppRoutingModule
   ],
   providers: [
     AccountsService,
