@@ -3,6 +3,8 @@ import { Component, OnInit } from '@angular/core';
 import { IUser } from '../interfaces/user';
 import { UserService } from '../services/user.service';
 
+
+
 @Component({
   selector: 'app-users',
   templateUrl: './users.component.html',
@@ -17,5 +19,7 @@ export class UsersComponent implements OnInit {
   ngOnInit() {
     this.users = this.userServise.getUsers();
   }
+
+
 
 }

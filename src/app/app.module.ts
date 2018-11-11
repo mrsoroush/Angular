@@ -28,13 +28,16 @@ import { UserComponent } from './users/user/user.component';
 import { AccountsComponent } from './components/accounts/accounts.component';
 import { EditAccountsComponent } from './components/accounts/edit-accounts/edit-accounts.component';
 import { UserService } from './services/user.service';
+import { EditUserComponent } from './users/edit-user/edit-user.component';
 
 
 const routes: Routes = [
   {path:'', component: HomeComponent},
-  {path:'users', component: UsersComponent},
-  {path:'users/:id', component: UserComponent},
-  {path:'users/:id/:name', component: UserComponent},
+  {path:'users', component: UsersComponent, children: [
+    {path:':id', component: UserComponent},
+    // {path:':id/:name', component: UserComponent},
+    {path:':id/edit', component: EditUserComponent},
+  ]},
   {path:'accounts', component: AccountsComponent},
   {path:'accounts/:id/edit', component: EditAccountsComponent},
 ];
@@ -62,6 +65,7 @@ const routes: Routes = [
     UserComponent,
     AccountsComponent,
     EditAccountsComponent,
+    EditUserComponent,
   ],
   imports: [
     BrowserModule,
