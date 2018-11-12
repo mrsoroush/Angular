@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { LoginService } from 'src/app/services/login-service.service';
 
 @Component({
   selector: 'app-home', //Selector as Tag
@@ -11,7 +12,7 @@ export class HomeComponent implements OnInit{
   
   ngOnInit(){}
 
-  constructor(){
+  constructor(private loginService: LoginService){
     setTimeout(() => {
       this.allowClick = true;
     }, 6000)
@@ -39,6 +40,14 @@ export class HomeComponent implements OnInit{
   onInputChange(event : Event){
     this.lastName = (<HTMLInputElement>event.target).value;
     //this.lastName = (event.target as HTMLInputElement).value;
+  }
+
+  onLogin(){
+    this.loginService.login();
+  }
+
+  onLogout(){
+    this.loginService.logout();
   }
 
 }

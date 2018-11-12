@@ -29,4 +29,6 @@
 <br>
 <app-test1 *ngFor="let t of tests"></app-test1>
 <p *ngFor="let t of tests; let i = index">{{'test' + (i+1)}}</p>
+<button class="btn btn-primary" (click)="onLogin()">Login</button>
+<button class="btn btn-primary" (click)="onLogout()">Log Out</button>
 

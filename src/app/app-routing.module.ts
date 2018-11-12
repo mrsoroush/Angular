@@ -8,10 +8,11 @@ import { EditUserComponent } from "./users/edit-user/edit-user.component";
 import { UserComponent } from "./users/user/user.component";
 import { UsersComponent } from "./users/users.component";
 import { HomeComponent } from "./components/home/home.component";
+import { AuthGuard } from "./services/auth-guard.service";
 
 const routes: Routes = [
     { path:'', component: HomeComponent },
-    { path:'users', component: UsersComponent, children: [
+    { path:'users', canActivate: [AuthGuard] , component: UsersComponent, children: [
       {path:':id', component: UserComponent},
       // {path:':id/:name', component: UserComponent},
       {path:':id/edit', component: EditUserComponent},

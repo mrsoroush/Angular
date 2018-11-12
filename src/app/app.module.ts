@@ -5,7 +5,7 @@ import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
-import{ TestComponent } from './test.component';
+import { TestComponent } from './test.component';
 import { HomeComponent } from './components/home/home.component';
 import { Test1Component } from './components/test1/test1.component';
 import { Home2Component } from './components/home2/home2.component';
@@ -30,6 +30,8 @@ import { EditAccountsComponent } from './components/accounts/edit-accounts/edit-
 import { UserService } from './services/user.service';
 import { EditUserComponent } from './users/edit-user/edit-user.component';
 import { Notfound404Component } from './components/notfound404/notfound404.component';
+import { AuthGuard } from './services/auth-guard.service';
+import { LoginService } from './services/login-service.service';
 
 @NgModule({
   declarations: [
@@ -67,6 +69,8 @@ import { Notfound404Component } from './components/notfound404/notfound404.compo
     AccountsService,
     LoggingService,
     UserService,
+    AuthGuard,
+    LoginService
   ],
   bootstrap: [AppComponent]
 })
