@@ -12,6 +12,8 @@ export class UserService {
     {id: 3, name: 'zahra'}
   ];
 
+  constructor() { }
+
   getUsers(){
     return this.users;
   }
@@ -23,6 +25,13 @@ export class UserService {
       });
     return user;
   }
+
+  updateUser(id: number, user: IUser){
+    let username = this.users.find(
+      (u) => {
+        return u.id === id;
+      });
+    username = user;
+  }
   
-  constructor() { }
 }

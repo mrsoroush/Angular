@@ -9,13 +9,14 @@ import { UserComponent } from "./users/user/user.component";
 import { UsersComponent } from "./users/users.component";
 import { HomeComponent } from "./components/home/home.component";
 import { AuthGuard } from "./services/auth-guard.service";
+import { CanDeactivateGuard } from "./services/can-deactivate-guard.service";
 
 const routes: Routes = [
     { path:'', component: HomeComponent },
     { path:'users', canActivate: [AuthGuard] , component: UsersComponent, children: [
       {path:':id', component: UserComponent},
       // {path:':id/:name', component: UserComponent},
-      {path:':id/edit', component: EditUserComponent},
+      {path:':id/edit', canDeactivate: [CanDeactivateGuard], component: EditUserComponent},
     ] },
     { path:'accounts', component: AccountsComponent },
     { path:'accounts/:id/edit', component: EditAccountsComponent },

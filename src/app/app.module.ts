@@ -32,6 +32,7 @@ import { EditUserComponent } from './users/edit-user/edit-user.component';
 import { Notfound404Component } from './components/notfound404/notfound404.component';
 import { AuthGuard } from './services/auth-guard.service';
 import { LoginService } from './services/login-service.service';
+import { CanDeactivateGuard } from './services/can-deactivate-guard.service';
 
 @NgModule({
   declarations: [
@@ -70,7 +71,8 @@ import { LoginService } from './services/login-service.service';
     LoggingService,
     UserService,
     AuthGuard,
-    LoginService
+    LoginService,
+    CanDeactivateGuard,
   ],
   bootstrap: [AppComponent]
 })
