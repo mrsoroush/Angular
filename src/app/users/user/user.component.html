@@ -6,5 +6,9 @@
 <p>User id: {{ singleUser.id }}</p>
 <p>User name: {{ singleUser.name }}</p>
 
+<h3>With Resolver (dynamic data):</h3>
+<p>User id: {{ resolveUser.id }}</p>
+<p>User name: {{ resolveUser.name }}</p>
+
 <a [routerLink]="['/users', 2, 'soroush']">Soroush</a><br>
 <button class="btn btn-primary" (click)="editUser()">Edit User</button>

@@ -33,6 +33,8 @@ import { Notfound404Component } from './components/notfound404/notfound404.compo
 import { AuthGuard } from './services/auth-guard.service';
 import { LoginService } from './services/login-service.service';
 import { CanDeactivateGuard } from './services/can-deactivate-guard.service';
+import { ErrorPageComponent } from './components/error-page/error-page.component';
+import { userResolver } from './services/user-resolver.service';
 
 @NgModule({
   declarations: [
@@ -59,6 +61,7 @@ import { CanDeactivateGuard } from './services/can-deactivate-guard.service';
     EditAccountsComponent,
     EditUserComponent,
     Notfound404Component,
+    ErrorPageComponent,
   ],
   imports: [
     BrowserModule,
@@ -73,6 +76,7 @@ import { CanDeactivateGuard } from './services/can-deactivate-guard.service';
     AuthGuard,
     LoginService,
     CanDeactivateGuard,
+    userResolver,
   ],
   bootstrap: [AppComponent]
 })

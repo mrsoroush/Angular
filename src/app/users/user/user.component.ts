@@ -1,5 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { ActivatedRoute, Params, Router } from '@angular/router';
+import { ActivatedRoute, Params, Router, Data } from '@angular/router';
 import { Subscription } from 'rxjs';
 
 import { IUser } from '../../interfaces/user';
@@ -13,8 +13,10 @@ import { UserService } from 'src/app/services/user.service';
 export class UserComponent implements OnInit, OnDestroy {
 
   userSubscription: Subscription;
+  loudedUserSubscription: Subscription;
   user: IUser = {id: 0, name: ''};
   singleUser: IUser;
+  resolveUser: IUser;
   
   constructor(private route: ActivatedRoute,
               private router: Router,
@@ -36,6 +38,11 @@ export class UserComponent implements OnInit, OnDestroy {
         this.singleUser = this.userService.getUser(+params['id']);
     });
     // this.singleUser = this.userService.getUser(+this.route.snapshot.params['id']);
+
+    this.loudedUserSubscription = this.route.data.subscribe(
+      (data: Data) => {
+        this.resolveUser = data['loudedUser'];
+      });
     }
 
     editUser(){
